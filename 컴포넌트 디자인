@@ -1,0 +1,54 @@
+TIL - 8.9
+CDD(Component Driven Development)
+페이지 단위로 UI 개발이 이루어지는 것과는 반대로 UI 컴포넌트들부터 만들고 이를 기반으로 페이지를 구성.
+
+[실제 CDD를 사용해 UI를 구축하는 사이트]
+링크1 : BBC
+링크2 : UN
+Storybook
+Component Driven Development를 하기 위한 도구.
+
+각각의 컴포넌트들을 따로 볼 수 있게 구성해주어 한 번에 하나의 컴포넌트에서 작업할 수 있다.
+Storybook 설치 및 세팅 방법
+Clone the template
+npx degit chromaui/intro-storybook-react-template taskbox
+cd taskbox
+Install dependencies
+yarn
+구조적인 CSS작성방법의 발전
+CSS > SASS(preprocessor) > BEM > CSS Modules > Styled Components(CSS-in-JS)
+
+CSS : 기본적인 스타일링 방법
+SASS : 프로그래밍 방법론을 도입하여, 컴파일 된 CSS를 만들어내는 전처리기
+BEM : CSS 클래스명 작성에 일관된 패턴을 강제하는 방법론
+Styled Compnents : 컴포넌트 기반으로 CSS를 작성할 수 있게 도와주는 라이브러리
+
+Styled Components
+<예시>
+
+const Button = styled.a`
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+`;
+Styled Components 특징
+Automatic critical CSS
+Styled Component 는 화면에 어떤 컴포넌트가 렌더링 되었는지 추적해서 해당하는 컴포넌트에 대한 스타일을 자동으로 삽입합니다. 따라서 코드를 적절히 분배해 놓으면 사용자가 어플리케이션을 사용할 때 최소한의 코드만으로 화면이 띄워지도록 할 수 있습니다.
+
+No class name bugs
+Styled Component 는 스스로 유니크한 className 을 생성합니다. 이는 className 의 중복이나 오타로 인한 버그를 줄여줍니다.
+
+Easier deletion of CSS
+기존에는 더 이상 사용하지 않거나 삭제한 컴포넌트에 해당하는 스타일 속성을 제거하기위해 CSS 파일 안의 className을 이리저리 찾아야 했습니다. 하지만 Styled Component 는 모든 스타일 속성이 특정 컴포넌트와 연결되어 있기 때문에 만약 컴포넌트를 더 이상 사용하지 않아 삭제할 경우 이에 대한 스타일 속성도 함께 삭제됩니다.
+
+Simple dynamic styling
+className을 일일이 수동으로 관리할 필요 없이 React 의 props 나 전역 속성을 기반으로 컴포넌트에 스타일 속성을 부여하기 때문에 간단하고 직관적입니다.
+
+Painless maintenance
+컴포넌트에 스타일을 상속하는 속성을 찾아 다른 CSS 파일들을 검색하지 않아도 되기 때문에 코드의 크기가 커지더라도 유지보수가 어렵지 않습니다.
+
+Automatic vendor prefixing
+개별 컴포넌트마다 기존의 CSS 를 이용하여 스타일 속성을 정의하면 될 뿐입니다. 이외의 것들은 Styled Component 가 알아서 처리해 줍니다.
+
