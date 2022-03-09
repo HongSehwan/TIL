@@ -1,9 +1,11 @@
-Animated e.g
+<h2>Animated e.g</h2>
 
+```
 const rotation = POSITION.y.interpolate({
     inputRange: [-300, 300],
     outputRange: ["-360deg", "360deg"],
   });
+```
 
  - rotate: 360도 회전 (outputRange가 꼭 숫자이지 않아도 된다.)
  - scale: input/outputRange 값에 따라 크기 확대/축소
